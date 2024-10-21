@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: json-test
+#  jackson:
+#    mapper:
+#      default-view-inclusion: true
+  cloud:
+    function:
+      definition: testProducer;testConsumer
+    stream:
+      binders:
+        rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 127.0.0.1 #10.61.1.22
+                port: 5672
+                username: admin
+                password: FeiPu@2024
+      default:
+        content-type: application/json
+        producer:
+          error-channel-enabled: true
+        consumer:
+          maxAttempts: 2
+      default-binder: rabbit
+      bindings:
+        testProducer-out-0:
+          destination: test
+        testConsumer-in-0:
+          destination: test
+          group: test
+
+
