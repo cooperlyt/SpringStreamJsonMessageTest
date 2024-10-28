@@ -54,10 +54,10 @@ class CustomMessageMarshallingConverter(objectMapper: ObjectMapper) : MappingJac
 @Configuration
 class RabbitMQAutoConfigure {
 
-    @Bean
-    fun messageConverter(objectMapper: ObjectMapper): MessageConverter {
-        return CustomMessageMarshallingConverter(objectMapper)
-    }
+//    @Bean
+//    fun messageConverter(objectMapper: ObjectMapper): MessageConverter {
+//        return CustomMessageMarshallingConverter(objectMapper)
+//    }
 }
 
 @Service

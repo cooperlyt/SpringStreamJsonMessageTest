@@ -17,7 +17,7 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: 127.0.0.1 #10.61.1.22
+                host: 127.0.0.1  #10.61.1.22
                 port: 5672
                 username: admin
                 password: FeiPu@2024
